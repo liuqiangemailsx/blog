@@ -72,7 +72,42 @@
        e = ['a','b','c'];
        
        let a: Array<number>;
+  
+ 6.元组 
+       /***
+       * 元组就是已知的参数声明;
+       **/
+ 
+       let h:[string,number]
+        h = ['a',1];
+        
+ 7.enum 枚举
+ 
+        enum InputProps {
+             lang = 'lg',
+             samll = 'sm'
+        }
+        
+ 8.interface type
+ 
+         interface InputProps {
+              name:string,
+              age?:number,
+              sex:number,
+          }
+          
+          type a  = string | number;
+          
+          function fn<T>(name: T, sex: T) {
+           }
+            fn<string>('112', '222')
+            
+  9.declare 
+  
+            declare function fn(){};
+            
       
+       
       
       
       
