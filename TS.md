@@ -1,5 +1,18 @@
 #TS
 
+   TS是什么
+   
+        它是 JavaScript 的一个超集，而且本质上向这个语言添加了可选的静态类型和基于类的面向对象编程;
+    
+    流程
+    
+        TS ---> JS ----> 打包 ---->发布
+      
+  
+
+
+
+
       /**
        *  .ts 文件生成 没有import export 会被视为一个脚本 
        *  number string boolean biglnt
@@ -19,6 +32,11 @@
  
        let a: string  = '';  
        let a:'';
+       let count:number = '';
+       let isDone:boolean =false;
+       let sym:Symbol()
+       let arr:Array = [];
+       let arr:Array<number | string> = [];
        let a:unknown; 未知类型 类型安全到any 不可直接赋值给其他参数；
        
  2.类型断言
@@ -73,7 +91,7 @@
        
        let a: Array<number>;
   
- 6.元组 
+ 6.元组 tuple
        /***
        * 元组就是已知的参数声明;
        **/
@@ -83,10 +101,34 @@
         
  7.enum 枚举
  
+        /**
+        *   enum默认从0 开始也可以字符串开始进行枚举， 还支持反向映射. 常量枚举. 异构枚举
+        *   
+        */
+        
         enum InputProps {
              lang = 'lg',
              samll = 'sm'
         }
+        InputProps['lg'] //lang
+        INputProps['lnag']//lg
+        
+        let num = InputProps.lang
+        
+        const enum Props{
+            NOOP,
+        }
+        
+        enum InputProps{
+            A,
+            B,
+            C = 'c',
+            D = 'd'
+        }
+        
+        InputProps.A // 0
+             
+             
         
  8.interface type
  
@@ -105,6 +147,62 @@
   9.declare 
   
             declare function fn(){};
+        
+  10.keyof
+  
+            type Preson = {
+              name: string,
+              age:number,
+            }
+            
+            type PresonKey = keyof Preson;
+            
+   11 Any 类型
+   
+            ts中任何类型都可以规为any类型，为所有类型的顶级类型。
+            
+             let notSoure:any = '1';
+             notSoure = false,
+             notSoure = 1;
+             
+   12.unknown;
+   
+            新更新的类型，跟any是一样，所有的类型都可以进行unknown,只可以any或者unknown 进行赋值， 其他类型会报错
+            
+            
+            let value:unknown;
+            
+            value = false;
+            value = 1;
+            
+            
+            let value1:string = value //error
+            
+            
+            
+    13.void 
+    
+    
+           void 表示是没有任何类型，跟any相反，一般用于函数返回, 严格模式是undefined
+           
+           
+           function fn():void {
+           
+           }
+           
+    14. null - undefined
+   
+            let u: undefined = undefined;
+            let n: null = null;
+    
+    15.object 
+    
+             let a:object | null 
+             
+     16.
+             
+            
+            
             
       
        
