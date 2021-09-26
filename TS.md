@@ -29,7 +29,8 @@
       let b = false; 
       
  1.基础类型
- 
+         
+       // boolean , string,Symbol,array,enum
        let a: string  = '';  
        let a:'';
        let count:number = '';
@@ -102,7 +103,7 @@
  7.enum 枚举
  
         /**
-        *   enum默认从0 开始也可以字符串开始进行枚举， 还支持反向映射. 常量枚举. 异构枚举
+        *   enum默认从0 开始也可以字符串开始进行枚举， 还支持反向映射. 常量枚举. 异构枚举 ,字符串枚举，数值枚举,
         *   
         */
         
@@ -199,7 +200,7 @@
     
              let a:object | null 
              
-     16.
+    
              
             
             
